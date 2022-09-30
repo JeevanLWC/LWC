@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="ApexImperativeMethod" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <p class="slds-m-bottom_small">
+                <lightning-button label="Load Accounts" onclick={handleLoad}></lightning-button>
+            </p>
+            <template if:true={accs}>
+                <template for:each={accs} for:item="a">
+                    <p key={a.Id}>{a.Name}</p>
+                </template>
+            </template>
+         
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,15 @@
+<template>
+<lightning-card title="contacts" icon-name="custom:custom14">
+<ul class="slds-m-around_medium">
+
+<template for:each={contacts} for:item="c">
+    <p key={c}>
+    <c-contact-line-item contact ={c}></c-contact-line-item>
+            </p>
+    
+</template>
+
+</ul>
+</lightning-card>
+</template>
+

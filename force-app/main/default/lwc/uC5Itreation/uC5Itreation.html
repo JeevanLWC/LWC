@@ -1,0 +1,21 @@
+<template>
+
+    <lightning-layout multiple-rows>
+
+        <template for:each={cities} for:item="n">
+
+             <p key={n}>
+
+                <lightning-layout-item padding="around-small" size="6">
+
+                   <lightning-card title={n}></lightning-card>
+
+                </lightning-layout-item>
+
+             </p>
+
+        </template>
+
+     </lightning-layout>
+
+</template>

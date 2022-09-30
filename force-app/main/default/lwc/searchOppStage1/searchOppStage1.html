@@ -1,0 +1,8 @@
+<template>
+    <lightning-card title="Search Opportunity based on a stage!">
+        <p slot="actions"> 
+            <lightning-button label="Filter" variant="brand" onclick={handleClick}></lightning-button>
+        </p>
+     <lightning-input label="Enter the stage" value={searchStage} onchange={handleChange}></lightning-input>
+    </lightning-card>
+</template>

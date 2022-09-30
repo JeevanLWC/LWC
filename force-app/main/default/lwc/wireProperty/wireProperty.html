@@ -1,0 +1,10 @@
+<template>
+    <lightning-layout multiple-rows>
+        <template for:each={accs.data} for:item="a">
+            <lightning-layout-item size="6" padding="around-small" key={a}>
+                <c-account-line-item account ={a}></c-account-line-item>
+                
+            </lightning-layout-item>
+        </template>
+    </lightning-layout>
+</template>

@@ -1,0 +1,27 @@
+<template>  
+    <c-search-opp-stage1 onfilterstage={handleStage}></c-search-opp-stage1>
+    <lightning-card title="Opp Example" icon-name="custom:custom63" >
+        <div class="slds-var-m-around_medium">
+            <template if:true={opportunities}>
+                <template for:each={opportunities} for:item="opp">
+                    <p key={opp.Id}>{opp.Name}</p>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+    <lightning-card title="Datatable Example" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <template if:true={opportunities}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={opportunities}
+                    columns={columns}
+                   >
+                </lightning-datatable>
+            </template>
+            <template if:true={contacts.error}>
+                <!-- handle Apex error -->
+            </template>
+        </div>
+    </lightning-card>
+</template>

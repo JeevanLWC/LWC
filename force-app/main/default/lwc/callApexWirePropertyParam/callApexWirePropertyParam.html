@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Call Apex wire With Params" icon-name="custom:custom63">
+
+    <lightning-input label="Enter Industry Name" value={searchText} onchange={handleChange}></lightning-input>
+    <lightning-layout multiple-rows>
+        <template for:each={accs.data} for:item="a">
+            <lightning-layout-item size="6" padding="around-small" key={a}>
+                <li  >{a.Name}-------{a.Industry}</li>
+            </lightning-layout-item>
+          
+        
+        </template>
+    </lightning-layout> 
+    </lightning-card>
+</template>

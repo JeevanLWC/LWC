@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title={account.Name}>
+        <p slot="actions"><lightning-button variant="brand" label={account.Name} onclick={handleClick} class="slds-m-left_x-small"></lightning-button></p>
+        <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">{accounts}</div>
+        <div class="slds-p-left_medium">
+            <p>{account.Name}</p>
+            <p>{account.Phone}</p>
+
+        </div>
+    
+    </lightning-card>
+</template>

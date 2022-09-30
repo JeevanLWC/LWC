@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="HelloConditionalRendering" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+            <lightning-input type="checkbox" label="Show details" onchange={handleChange}></lightning-input>
+            <template if:true={areDetailsVisible}>
+                <div class="slds-m-vertical_medium">
+                   <h1> Name : CTS</h1>
+                   <h1> Batch : interns</h1>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

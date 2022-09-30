@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="CITY NAME UC3" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+            <p>City Is, {city} !</p>
+            <p>Name Is, {name} !</p>
+
+            <lightning-input label="input city" value={city} onchange={handleChange}  ></lightning-input>
+            <lightning-button label="city" onclick={handleClick}> </lightning-button>
+            <lightning-input label="input Name" value={name}></lightning-input>
+            <lightning-button label="Name" onclick={handleClick}> </lightning-button>
+        </div>
+
+
+
+    </lightning-card>
+</template>

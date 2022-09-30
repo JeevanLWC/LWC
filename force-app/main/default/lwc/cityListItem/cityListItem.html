@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="cities" icon-name="custom:custom14">
+        <ul class="slds-m-around_medium">
+            <template for:each={cities} for:item="n">
+                <p key={n}>
+                <c-city-line-item city ={n}></c-city-line-item>
+                </p>
+            </template>
+        </ul>
+    </lightning-card>
+</template>

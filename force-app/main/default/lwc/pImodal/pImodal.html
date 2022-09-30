@@ -1,0 +1,67 @@
+<template>
+
+    <div class="slds-card slds-m-horizontal_large" style="font-family: 'Open Sans', sans-serif">
+
+        <!-- Spinner -->
+        <template if:true={showSpinner}>
+            <div class="slds-is-relative slds-m-around_large slds-align_absolute-center" style="min-height: 300px;">
+                <lightning-spinner alternative-text="Loading..." variant="brand"></lightning-spinner>
+            </div>
+        </template>
+
+        <template if:false={showSpinner}>
+            <!-- Header -->
+            <div class="slds-card__header slds-p-bottom_small">
+                <header>
+                    <lightning-progress-indicator current-step={step} type="path" variant="base" has-error="false">
+                        <lightning-progress-step label="First Page" value="1" onclick={nextPage}></lightning-progress-step>
+                        <lightning-progress-step label="Second Page" value="2" onclick={nextPage}></lightning-progress-step>
+                        <lightning-progress-step label="Third Page" value="3" onclick={nextPage}></lightning-progress-step>
+                    </lightning-progress-indicator>
+                </header>
+            </div>
+
+            <!-- First Page -->
+            <template if:true={showFirstPage}>
+                
+                    <lightning-combobox name="recordType" label="" placeholder="Choose Account record type"
+                            value={value} options={recordTypeId} onchange={changeHandler}>
+                        </lightning-combobox>
+                
+            </template>
+
+            <!-- Second Page -->
+            <template if:true={recordTypeIdVal}>
+                 <template if:true={showSecondPage}>
+                     <lightning-record-form object-api-name="Account" record-type-id={recordTypeIdVal}
+                        fields={fields} onsuccess={handleSuccess}>
+                    </lightning-record-form>
+
+                </template>
+
+            </template>
+
+            <!-- Third Page -->
+            <template if:true={showThirdPage}>
+                <H1> Third page</H1>
+            </template>
+
+            <!-- Footer -->
+            <footer class="slds-modal__footer slds-align_absolute-center" style="padding: 0.50rem 1rem;">
+                <template if:true={showFirstPage}>
+                    <lightning-button label="Next" variant="neutral" value="2" onclick={nextPage}></lightning-button>
+                </template>
+                <template if:true={showSecondPage}>
+                    <lightning-button class="slds-p-right_xx-small" label="Previous" variant="neutral" value="1" onclick={previousPage}></lightning-button>
+                    <lightning-button label="Next" variant="neutral" value="3" onclick={nextPage}></lightning-button>
+                </template>
+                <template if:true={showThirdPage}>
+                    <lightning-button class="slds-p-right_xx-small" label="Previous" variant="neutral" value="2" onclick={previousPage}></lightning-button>
+                    <lightning-button label="Save" variant="brand"></lightning-button>
+                </template>
+            </footer>
+        </template>
+
+    </div>
+
+</template>
